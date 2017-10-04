@@ -23,7 +23,7 @@ router.route('/requests')
 
   .get(function(req, res) {
     console.log (req.query.dest_id);
-    Request.find({"dest": req.query.dest_id}, function(err, contact) {
+    Request.find({"des": req.query.dest_id}, function(err, contact) {
       if (err)
         res.send(err);
 
@@ -36,7 +36,7 @@ router.route('/requests')
   // update contact: PUT http://localhost:8080/api/contacts/{id}
   .post(function(req, res) {
         var request = new Request ({"src" :req.body.src, "dest":req.body.dest});
-        console.log ({"src" :req.body.src, "dest":req.body.dest});
+        console.log ({"src" :req.body.src, "des":req.body.dest});
         request.save(function(err) {
         if (err)
             res.send(err);
