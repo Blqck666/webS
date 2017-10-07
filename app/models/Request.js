@@ -3,7 +3,7 @@ var Schema       = mongoose.Schema;
 
 var RequestSchema   = new Schema({
     src: String,
-    des : String
+    dest : String
 });
 
 module.exports = mongoose.model('Request', RequestSchema);

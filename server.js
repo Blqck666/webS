@@ -36,7 +36,7 @@ router.route('/requests')
   // update contact: PUT http://localhost:8080/api/contacts/{id}
   .post(function(req, res) {
         var request = new Request ({"src" :req.body.src, "dest":req.body.dest});
-        console.log ({"src" :req.body.src, "des":req.body.dest});
+        console.log ({"src" :req.body.src, "dest":req.body.dest});
         request.save(function(err) {
         if (err)
             res.send(err);
