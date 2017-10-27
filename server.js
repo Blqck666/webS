@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var Request = require('./app/models/Request');
 var Friends = require('./app/models/Friends');
 var Messages = require('./app/models/Messages');
+var user = require('./app/models/user');
 mongoose.connect('mongodb://toutouastro:toutouastro@ds032887.mlab.com:32887/pokemap');
 
 //init bodyParser to extract properties from POST data
@@ -115,6 +116,21 @@ router.route('/messages')
     });
 
   });
+
+router.route('/info')
+.get(function(req, res) {
+    console.log (req.query.id);
+    user.find({"id": req.query.id}, function(err, UserF) {
+      if (err)
+        res.send(err);
+
+      console.log (UserF);
+      res.json(UserF);
+    });
+
+  })
+  
+
 
 //associate router to url path
 app.use('/', router);
