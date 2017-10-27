@@ -119,8 +119,8 @@ router.route('/messages')
 
 router.route('/info')
 .get(function(req, res) {
-    console.log (req.query.id);
-    user.find({"id": req.query.id}, function(err, UserF) {
+    console.log (req.query.user_id);
+    user.find({"username": req.query.user_id}, function(err, UserF) {
       if (err)
         res.send(err);
 
