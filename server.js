@@ -12,7 +12,7 @@ mongoose.connect('mongodb://toutouastro:toutouastro@ds032887.mlab.com:32887/poke
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 //init Express Router
 var router = express.Router();
 //default/test route
@@ -120,7 +120,7 @@ router.route('/messages')
 router.route('/info')
 .get(function(req, res) {
     console.log (req.query.user_id);
-    Users.find({"id": req.query.user_id}, function(err, UserF) {
+    Users.findOne({"id": req.query.user_id}, function(err, UserF) {
       if (err)
         res.send(err);
 
