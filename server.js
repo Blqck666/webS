@@ -120,7 +120,7 @@ router.route('/messages')
 router.route('/info')
 .get(function(req, res) {
     console.log (req.query.user_id);
-    Users.findOne({"id": req.query.user_id}, function(err, UserF) {
+    Users.find({"id": req.query.user_id}, function(err, UserF) {
       if (err)
         res.send(err);
 
