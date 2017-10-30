@@ -24,7 +24,7 @@ router.route('/requests')
 
   .get(function(req, res) {
     console.log (req.query.dest_id);
-    Request.find({"des": req.query.dest_id}, function(err, contact) {
+    Request.find({"dest": req.query.dest_id}, function(err, contact) {
       if (err)
         res.send(err);
 
