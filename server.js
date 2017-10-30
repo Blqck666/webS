@@ -35,7 +35,7 @@ router.route('/requests')
   })
 
   // update contact: PUT http://localhost:8080/api/contacts/{id}
- /* .post(function(req, res) {
+  .post(function(req, res) {
         var request = new Request ({"src" :req.body.src, "dest":req.body.dest});
         console.log ({"src" :req.body.src, "dest":req.body.dest});
         request.save(function(err) {
@@ -44,8 +44,8 @@ router.route('/requests')
         res.json({ message: 'Request created!' });
       });
   })
-*/
-  .post(function(req, res) {
+
+  .put(function(req, res) {
         Request.findById(req.body.req_id, function(error, friend_req) {
           console.log("here");
           //res.json(req.body.req_id);
