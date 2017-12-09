@@ -23,8 +23,8 @@ router.get('/toutou', function(req, res) {
 router.route('/requests/:req_id')
 
   .get(function(req, res) {
-    console.log (req.query.dest_id);
-    Request.find({"dest": req.query.dest_id}, function(err, contact) {
+    console.log (req.params.dest_id);
+    Request.find({"dest": req.params.dest_id}, function(err, contact) {
       if (err)
         res.send(err);
 
@@ -36,8 +36,8 @@ router.route('/requests/:req_id')
 
   // update contact: PUT http://localhost:8080/api/contacts/{id}
   .post(function(req, res) {
-        var request = new Request ({"src" :req.body.src, "dest":req.body.dest});
-        console.log ({"src" :req.body.src, "dest":req.body.dest});
+        var request = new Request ({"src" :req.params.src, "dest":req.params.dest});
+        console.log ({"src" :req.params.src, "dest":req.params.dest});
         request.save(function(err) {
         if (err)
             res.send(err);
