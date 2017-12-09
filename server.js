@@ -47,7 +47,7 @@ router.route('/requests/:req_id')
 
   .put(function(req, res) {
         console.log(req.body.req_id);
-        console.log(req.body);
+        console.log(req.params);
         Request.findById(req.body.req_id, function(error, friend_req) {
           console.log("here");
           //res.json(req.body.req_id);
