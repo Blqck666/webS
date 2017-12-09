@@ -20,7 +20,7 @@ router.get('/toutou', function(req, res) {
   res.json({ message: 'App is running!' });
 });
 
-router.route('/requests')
+router.route('/requests/:req_id')
 
   .get(function(req, res) {
     console.log (req.query.dest_id);
